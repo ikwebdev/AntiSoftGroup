@@ -9,3 +9,12 @@
 <P>Lalaka</P>
 <p>Ozozel'</p>
 </html>
+<?php
+$url = $_SERVER['REQUEST_URI'];
+var_dump($url = array_filter(explode('/',$url)));
+echo current($url);
+var_dump($url = array_slice($url,1));
+echo current($url);
+var_dump($url = array_slice($url,1));
+echo current($url);
+?>
