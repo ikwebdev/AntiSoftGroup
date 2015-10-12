@@ -4,7 +4,7 @@ USE `test`;
 --
 -- Host: 127.0.0.1    Database: test
 -- ------------------------------------------------------
--- Server version	5.6.26
+-- Server version	5.6.24
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,8 +39,32 @@ CREATE TABLE `tetststat` (
 
 LOCK TABLES `tetststat` WRITE;
 /*!40000 ALTER TABLE `tetststat` DISABLE KEYS */;
-INSERT INTO `tetststat` VALUES (1,'Ivan','Hasla'),(2,'Ihor','Lalka');
+INSERT INTO `tetststat` VALUES (1,'Ivan','Hasla'),(2,'Ihor','Hasle'),(3,'TYsk','Blkbsv');
 /*!40000 ALTER TABLE `tetststat` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trest`
+--
+
+DROP TABLE IF EXISTS `trest`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `trest` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Count` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trest`
+--
+
+LOCK TABLES `trest` WRITE;
+/*!40000 ALTER TABLE `trest` DISABLE KEYS */;
+INSERT INTO `trest` VALUES (1,234),(2,422);
+/*!40000 ALTER TABLE `trest` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-13  0:12:53
+-- Dump completed on 2015-10-13  0:31:43
