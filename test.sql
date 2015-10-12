@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `test`;
 -- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: test
 -- ------------------------------------------------------
--- Server version	5.6.24
+-- Server version	5.6.26
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,7 +37,7 @@ CREATE TABLE `tetststat` (
 
 LOCK TABLES `tetststat` WRITE;
 /*!40000 ALTER TABLE `tetststat` DISABLE KEYS */;
-INSERT INTO `tetststat` VALUES (1,'Ivan','Hasla'),(2,'Ihor','Hasle'),(3,'TYsk','Blkbsv');
+INSERT INTO `tetststat` VALUES (1,'Ivan','Hasla'),(2,'Ihor','Hasle'),(3,'TYsk','Blkbsv'),(4,'Seveeryn','Krs');
 /*!40000 ALTER TABLE `tetststat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -76,4 +74,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-13  0:31:43
+-- Dump completed on 2015-10-13  0:35:53
