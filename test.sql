@@ -1,8 +1,10 @@
+CREATE DATABASE  IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `test`;
 -- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: test
 -- ------------------------------------------------------
--- Server version	5.6.26
+-- Server version	5.6.24
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -51,6 +53,7 @@ DROP TABLE IF EXISTS `trest`;
 CREATE TABLE `trest` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Count` int(11) DEFAULT NULL,
+  `List` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -61,7 +64,7 @@ CREATE TABLE `trest` (
 
 LOCK TABLES `trest` WRITE;
 /*!40000 ALTER TABLE `trest` DISABLE KEYS */;
-INSERT INTO `trest` VALUES (1,234),(2,422);
+INSERT INTO `trest` VALUES (1,234,NULL),(2,422,NULL);
 /*!40000 ALTER TABLE `trest` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -74,4 +77,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-13  0:35:53
+-- Dump completed on 2015-10-13  0:39:35
