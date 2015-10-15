@@ -7,5 +7,5 @@
  */
 spl_autoload_register(function ($className) {
     var_dump($className);
-    include('lib' . "/" . $className . ".php");
+    include("../models" . DIRECTORY_SEPARATOR . $className . ".php");
 });

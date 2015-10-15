@@ -6,4 +6,4 @@ RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^resource/(.*)$ resource/$1 [L]
 RewriteRule ^.*$ [NC,L]
-RewriteRule ^.*$ index.php [NC,L]
+RewriteRule ^.*$ webroot/index.php [NC,L]

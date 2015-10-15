@@ -1,6 +1,6 @@
 <?php
-require_once('lib/autoloader.php');
-require_once('lib/misc_functions.php');
+require_once('../lib/autoloader.php');
+require_once('../lib/misc_functions.php');
 /*$url = $_SERVER['REQUEST_URI'];
 var_dump($url = array_filter(explode('/',$url)));
 echo current($url);
