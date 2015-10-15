@@ -6,6 +6,5 @@
  * Time: 21:16
  */
 spl_autoload_register(function ($className) {
-    var_dump($className);
     include("../models" . DIRECTORY_SEPARATOR . $className . ".php");
 });

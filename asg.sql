@@ -15,23 +15,6 @@ CREATE DATABASE IF NOT EXISTS `asg_dev` /*!40100 DEFAULT CHARACTER SET utf8 COLL
 USE `asg_dev`;
 
 
--- Дамп структуры для таблица asg_dev.pages
-CREATE TABLE IF NOT EXISTS `pages` (
-  `id` int(11) NOT NULL,
-  `file_name` varchar(50) COLLATE utf8_bin NOT NULL,
-  `layout` varchar(50) COLLATE utf8_bin NOT NULL,
-  `create` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- Дамп данных таблицы asg_dev.pages: ~0 rows (приблизительно)
-/*!40000 ALTER TABLE `pages` DISABLE KEYS */;
-INSERT IGNORE INTO `pages` (`id`, `file_name`, `layout`, `create`, `modified`) VALUES
-	(1, 'home.php', 'main', '2015-10-15 21:52:17', '2015-10-15 21:52:17');
-/*!40000 ALTER TABLE `pages` ENABLE KEYS */;
-
-
 -- Дамп структуры для таблица asg_dev.pages_details
 CREATE TABLE IF NOT EXISTS `pages_details` (
   `id` int(11) NOT NULL,
@@ -45,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `pages_details` (
   CONSTRAINT `FK__pages` FOREIGN KEY (`page_id`) REFERENCES `pages` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Дамп данных таблицы asg_dev.pages_details: ~0 rows (приблизительно)
+-- Дамп данных таблицы asg_dev.pages_details: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `pages_details` DISABLE KEYS */;
 INSERT IGNORE INTO `pages_details` (`id`, `page_id`, `language_id`, `alias`, `created`, `modified`) VALUES
 	(0, 1, 1, 'home', '2015-10-15 22:18:24', '2015-10-15 22:18:24');
