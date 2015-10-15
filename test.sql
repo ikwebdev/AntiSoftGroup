@@ -1,80 +1,57 @@
-CREATE DATABASE  IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `test`;
--- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
---
--- Host: 127.0.0.1    Database: test
--- ------------------------------------------------------
--- Server version	5.6.24
+-- --------------------------------------------------------
+-- Хост:                         127.0.0.1
+-- Версия сервера:               5.6.26 - MySQL Community Server (GPL)
+-- ОС Сервера:                   Win32
+-- HeidiSQL Версия:              9.3.0.4984
+-- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `tetststat`
---
+-- Дамп структуры базы данных test
+CREATE DATABASE IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `test`;
 
-DROP TABLE IF EXISTS `tetststat`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tetststat` (
+
+-- Дамп структуры для таблица test.tetststat
+CREATE TABLE IF NOT EXISTS `tetststat` (
   `id` int(11) NOT NULL,
   `name` varchar(45) NOT NULL,
   `pass` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `tetststat`
---
-
-LOCK TABLES `tetststat` WRITE;
+-- Дамп данных таблицы test.tetststat: ~4 rows (приблизительно)
+DELETE FROM `tetststat`;
 /*!40000 ALTER TABLE `tetststat` DISABLE KEYS */;
-INSERT INTO `tetststat` VALUES (1,'Ivan','Hasla'),(2,'Ihor','Hasle'),(3,'TYsk','Blkbsv'),(4,'Seveeryn','Krs');
+INSERT INTO `tetststat` (`id`, `name`, `pass`) VALUES
+	(1, 'Ivan', 'Hasla'),
+	(2, 'Ihor', 'Hasle'),
+	(3, 'TYsk', 'Blkbsv'),
+	(4, 'Seveeryn', 'Krs');
 /*!40000 ALTER TABLE `tetststat` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `trest`
---
 
-DROP TABLE IF EXISTS `trest`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `trest` (
+-- Дамп структуры для таблица test.trest
+CREATE TABLE IF NOT EXISTS `trest` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Count` int(11) DEFAULT NULL,
   `List` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `trest`
---
-
-LOCK TABLES `trest` WRITE;
+-- Дамп данных таблицы test.trest: ~4 rows (приблизительно)
+DELETE FROM `trest`;
 /*!40000 ALTER TABLE `trest` DISABLE KEYS */;
-INSERT INTO `trest` VALUES (1,234,'tr'),(2,422,'sfdd'),(3,234,'sdv'),(4,234,'rfgdgd');
+INSERT INTO `trest` (`id`, `Count`, `List`) VALUES
+	(1, 234, NULL),
+	(2, 422, NULL),
+	(3, 234, 'vergre'),
+	(4, 234, 'ewrfewrwewe');
 /*!40000 ALTER TABLE `trest` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2015-10-13  0:46:50

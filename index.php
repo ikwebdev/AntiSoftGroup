@@ -1,20 +1,17 @@
-<html>
-<head></head>
-<h1>
-    Test GIT by Cevig lol
-    Test GIT by Cevig Krasava
-</h1>
-<p> So hasl</p>
-<p> So hasl from storm</p>
-<P>Lalaka</P>
-<p>Ozozel'</p>
-</html>
 <?php
-$url = $_SERVER['REQUEST_URI'];
+require_once('lib/autoloader.php');
+require_once('lib/misc_functions.php');
+/*$url = $_SERVER['REQUEST_URI'];
 var_dump($url = array_filter(explode('/',$url)));
 echo current($url);
 var_dump($url = array_slice($url,1));
 echo current($url);
 var_dump($url = array_slice($url,1));
-echo current($url);
-?>
+echo current($url);*/
+$pdo = DbConnect::Instance();
+$sql = 'SELECT * from asg_dev.pages';
+$stmt = $pdo ->query($sql);
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+debug($result);
+
+
