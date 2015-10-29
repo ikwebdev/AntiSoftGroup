@@ -9,6 +9,6 @@ class Info
 {
     public function show()
     {
-        debug("'It's alive!");
+        debug("'It's alive! Op");
     }
 }

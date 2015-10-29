@@ -5,6 +5,7 @@
  * Date: 15.10.2015
  * Time: 23:04
  */
+
 class Router
 {
     private $_page_info;
@@ -22,7 +23,7 @@ class Router
     }
 
     private function _initController($controller,$method) {
-        debug($controller.$method);
+        //debug($controller.$method);
         $ctrl = new $controller();
         $ctrl->$method();
     }
