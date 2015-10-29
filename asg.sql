@@ -15,6 +15,39 @@ CREATE DATABASE IF NOT EXISTS `asg_dev` /*!40100 DEFAULT CHARACTER SET utf8 COLL
 USE `asg_dev`;
 
 
+-- Дамп структуры для таблица asg_dev.languages
+CREATE TABLE IF NOT EXISTS `languages` (
+  `id` int(11) DEFAULT NULL,
+  `abr` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(50) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Дамп данных таблицы asg_dev.languages: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `languages` DISABLE KEYS */;
+INSERT IGNORE INTO `languages` (`id`, `abr`, `name`) VALUES
+	(1, 'en', 'English');
+/*!40000 ALTER TABLE `languages` ENABLE KEYS */;
+
+
+-- Дамп структуры для таблица asg_dev.page
+CREATE TABLE IF NOT EXISTS `page` (
+  `id` int(11) NOT NULL,
+  `file_name` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `layout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `controller` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `method` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Дамп данных таблицы asg_dev.page: ~1 rows (приблизительно)
+/*!40000 ALTER TABLE `page` DISABLE KEYS */;
+INSERT IGNORE INTO `page` (`id`, `file_name`, `layout`, `controller`, `method`, `created`, `modified`) VALUES
+	(1, 'home', 'main', 'Info', 'show', '2015-10-29 21:51:39', '2015-10-29 21:51:42');
+/*!40000 ALTER TABLE `page` ENABLE KEYS */;
+
+
 -- Дамп структуры для таблица asg_dev.pages_details
 CREATE TABLE IF NOT EXISTS `pages_details` (
   `id` int(11) NOT NULL,
@@ -24,11 +57,10 @@ CREATE TABLE IF NOT EXISTS `pages_details` (
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `FK__pages` (`page_id`),
-  CONSTRAINT `FK__pages` FOREIGN KEY (`page_id`) REFERENCES `pages` (`id`)
+  KEY `FK__pages` (`page_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Дамп данных таблицы asg_dev.pages_details: ~1 rows (приблизительно)
+-- Дамп данных таблицы asg_dev.pages_details: ~0 rows (приблизительно)
 /*!40000 ALTER TABLE `pages_details` DISABLE KEYS */;
 INSERT IGNORE INTO `pages_details` (`id`, `page_id`, `language_id`, `alias`, `created`, `modified`) VALUES
 	(0, 1, 1, 'home', '2015-10-15 22:18:24', '2015-10-15 22:18:24');
