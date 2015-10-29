@@ -17,6 +17,13 @@ class Router
     public function start($url)
     {
         $o_url = new Url($url);
-        $o_url->getPageInfo();
+        $page_info = $o_url->getPageInfo();
+        $this->_initController($page_info['controller'],$page_info['method']);
+    }
+
+    private function _initController($controller,$method) {
+        debug($controller.$method);
+        $ctrl = new $controller();
+        $ctrl->$method();
     }
 }

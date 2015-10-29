@@ -20,12 +20,12 @@ class Url
     private function _getPagesInfoFromDb()
     {
         $pdo = DbConnect::Instance();
-        $sql = 'SELECT page_id, file_name, layout, language_id,controller,method,alias FROM asg_dev.pages
-            LEFT JOIN asg_dev.pages_details ON pages.id = pages_details.page_id';
+        $sql = 'SELECT page_id, file_name, layout, language_id,controller,method,alias,abr FROM asg_dev.page
+            LEFT JOIN asg_dev.pages_details ON page.id = pages_details.page_id
+            LEFT JOIN asg_dev.languages ON asg_dev.languages.id = pages_details.language_id';
         $stmt = $pdo ->query($sql);
-     //   $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         while($row = $stmt->fetch()){
-            $result[$row['alias']] = $row;
+            $result[$row['abr']][$row['alias']] = $row;
         }
         $this->_pages_info = $result;
     }
@@ -36,8 +36,11 @@ class Url
     }
     public function getPageInfo()
     {
-        debug($this->_url);
-       // return $this->_pages_info;
-    }
+        $url = array_filter(explode("/",$this->_url));
+        $language = $url[1];
+        $url = array_slice($url,1);
+        $alias = $url[0];
+        return $this->_pages_info[$language][$alias];
+      }
 
 }
