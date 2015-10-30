@@ -5,6 +5,7 @@
  * Date: 15.10.2015
  * Time: 20:59
  */
+namespace lib;
 class DbConnect
 {
     private $_host = '127.0.0.1';
@@ -32,13 +33,13 @@ class DbConnect
     {
         $dsn = "mysql:host = $this->_host; dbname = $this->_db; charset = $this->_charset";
         $opt = array(
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+           \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
         );
         try {
-            $pdo = new PDO($dsn, $this->_user, $this->_password, $opt);
-        } catch (PDOException $e) {
-            throw new PDOException('Filed connection to database: ' . $e->getMessage());
+            $pdo = new \PDO($dsn, $this->_user, $this->_password, $opt);
+        } catch (\PDOException $e) {
+            throw new \PDOException('Filed connection to database: ' . $e->getMessage());
         }
         $this->_db = $pdo;
     }

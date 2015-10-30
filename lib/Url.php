@@ -5,6 +5,7 @@
  * Date: 25.10.2015
  * Time: 23:24
  */
+namespace lib;
 class Url
 {
     private $_url;

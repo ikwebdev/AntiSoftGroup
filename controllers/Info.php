@@ -5,6 +5,7 @@
  * Date: 29.10.2015
  * Time: 22:11
  */
+namespace controllers;
 class Info
 {
     public function show()

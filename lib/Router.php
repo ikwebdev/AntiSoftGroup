@@ -5,7 +5,7 @@
  * Date: 15.10.2015
  * Time: 23:04
  */
-
+namespace lib;
 class Router
 {
     private $_page_info;
